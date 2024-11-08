@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk2hnklvlded0"]
+[gd_scene load_steps=3 format=3 uid="uid://dk2hnklvlded0"]
 
 [ext_resource type="Texture2D" uid="uid://bustu78o3w5g3" path="res://Assets/miku.png" id="1_fah4n"]
+[ext_resource type="Texture2D" uid="uid://3lk1jvrn5rp5" path="res://Assets/green.png" id="2_xcdfe"]
 
 [node name="Node2D - Hatsune Miku" type="Sprite2D"]
 scale = Vector2(0.263825, 0.263825)
 texture = ExtResource("1_fah4n")
+
+[node name="Elliott\'s Random Image" type="Sprite2D" parent="."]
+position = Vector2(3411.35, -606.463)
+scale = Vector2(8.61682, 15.5713)
+texture = ExtResource("2_xcdfe")
