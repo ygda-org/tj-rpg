@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk5mgru0k47xc"]
+
+[ext_resource type="Texture2D" uid="uid://u70um7toy3tp" path="res://Assets/yotsuba.jpg" id="1_h358q"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_h358q")
