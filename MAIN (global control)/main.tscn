@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://56jr0rno445u"]
+
+[ext_resource type="Script" path="res://MAIN (global control)/gamestate.gd" id="1_75wbd"]
+
+[node name="Main" type="Node2D"]
+
+[node name="GameState" type="Node2D" parent="."]
+script = ExtResource("1_75wbd")
