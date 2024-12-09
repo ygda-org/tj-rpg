@@ -87,6 +87,7 @@ theme_override_font_sizes/font_size = 35
 text = "PLAYER"
 
 [node name="PlayerHealthBar" type="ProgressBar" parent="PlayerPanel"]
+layout_mode = 0
 offset_left = 387.0
 offset_top = 14.0
 offset_right = 899.0
