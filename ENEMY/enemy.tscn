@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://drwv5ncjto1v1"]
+[gd_scene load_steps=5 format=3 uid="uid://drwv5ncjto1v1"]
 
 [ext_resource type="Script" path="res://ENEMY/base_enemy.gd" id="1_undf5"]
+[ext_resource type="Script" path="res://ENEMY/base_enemy_character_body_2d.gd" id="2_5qjer"]
 [ext_resource type="Script" path="res://ENEMY/base_enemy_sprite_2d.gd" id="3_2ig6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sac0i"]
@@ -10,6 +11,7 @@ size = Vector2(127, 127)
 script = ExtResource("1_undf5")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_5qjer")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 script = ExtResource("3_2ig6b")

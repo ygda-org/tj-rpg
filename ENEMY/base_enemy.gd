@@ -7,8 +7,9 @@ class_name Base_Enemy
 @export var maxHealth: int = 30
 var health: int = 30
 @export var damage: int = 20
+var target_velocity
 
-
+const PLAYER = preload("res://player.tscn")
 
 func applyDamage(inputDamage : int):
 	health -= inputDamage;
@@ -21,13 +22,11 @@ func heal(inputHealth : int):
 	
 func suicide():
 	queue_free()
-	
+
 func moveTo():
-	pass
+	target_velocity = Vector2(PLAYER.x, PLAYER.y)
 
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
