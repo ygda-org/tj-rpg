@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bc5h5kht6dl"]
 
-[ext_resource type="Script" path="res://INTERACTION/interactable.gd" id="1_ikenr"]
+[ext_resource type="Script" path="res://INTERACTION/SCRIPTS/interactable.gd" id="1_ikenr"]
 
-[node name="Interactable" type="Area2D"]
+[node name="Interactable" type="Area2D" groups=["interactable"]]
 collision_layer = 2
 collision_mask = 2
-monitorable = false
+monitoring = false
 script = ExtResource("1_ikenr")
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
