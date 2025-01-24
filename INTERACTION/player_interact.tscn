@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://gh5m7f5jcfih"]
 
-[ext_resource type="Script" path="res://INTERACTION/player_interact.gd" id="1_oues8"]
+[ext_resource type="Script" path="res://INTERACTION/SCRIPTS/player_interact.gd" id="1_oues8"]
 
 [node name="player_interact" type="Area2D"]
-monitoring = false
+collision_layer = 2
+collision_mask = 2
+monitorable = false
 script = ExtResource("1_oues8")
