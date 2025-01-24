@@ -6,6 +6,9 @@ var direction: Vector2 = Vector2(0,0)
 
 
 func _physics_process(delta):
+	if(Gamestate.dialogue_playing):
+		return
+		
 	direction = Vector2(0, 0)
 	
 	if Input.is_action_pressed("move_left"):
@@ -16,7 +19,9 @@ func _physics_process(delta):
 		direction.y = -1
 	if Input.is_action_pressed("move_down"):
 		direction.y = 1
-		
+	
+	direction = direction.normalized()	
+	
 	velocity.x = direction.x * SPEED
 	velocity.y = direction.y * SPEED
 	
