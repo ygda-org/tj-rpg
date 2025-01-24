@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_gy6ow"]
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="3_3xkmm"]
-[ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
-[ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="5_edab4"]
+[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
+[ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_we861"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
 size = Vector2(85, 90.5)
@@ -15,7 +15,7 @@ size = Vector2(85, 90.5)
 [node name="Interactable" parent="." instance=ExtResource("3_3xkmm")]
 
 [node name="Dialogue" parent="Interactable" instance=ExtResource("3_d8gmx")]
-dialogue_resource = ExtResource("5_edab4")
+dialogue_resource = ExtResource("4_we861")
 
 [node name="ColorRect" type="ColorRect" parent="Interactable"]
 offset_left = 896.0

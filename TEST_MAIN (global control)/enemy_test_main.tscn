@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://2kdexnxxt6vx"]
+
+[ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="1_j2b5l"]
+[ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="2_31r65"]
+[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="3_5acn4"]
+[ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_7hvn2"]
+[ext_resource type="PackedScene" uid="uid://drwv5ncjto1v1" path="res://ENEMY/enemy.tscn" id="5_q7okn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
+size = Vector2(85, 90.5)
+
+[node name="EnemyTestMain" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_j2b5l")]
+
+[node name="Interactable" parent="." instance=ExtResource("2_31r65")]
+
+[node name="Dialogue" parent="Interactable" instance=ExtResource("3_5acn4")]
+dialogue_resource = ExtResource("4_7hvn2")
+
+[node name="ColorRect" type="ColorRect" parent="Interactable"]
+offset_left = 896.0
+offset_top = 191.0
+offset_right = 981.0
+offset_bottom = 267.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(938.5, 228.75)
+shape = SubResource("RectangleShape2D_agw5h")
+
+[node name="Enemy" parent="." instance=ExtResource("5_q7okn")]
