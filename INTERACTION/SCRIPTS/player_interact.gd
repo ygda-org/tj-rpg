@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 
 	if(can_interact && Input.is_action_just_released("interact")):
 		var interactables = get_overlapping_areas()
-		if interactables.size() < 0: 
+		if interactables.size() == 0: 
 			return
 
 		assert(interactables[0].is_in_group("interactable"))
