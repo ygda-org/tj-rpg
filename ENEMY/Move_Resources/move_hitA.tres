@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseMoveResource" load_steps=2 format=3 uid="uid://d4l1h8c3d4sr"]
+
+[ext_resource type="Script" path="res://ENEMY/Move_Resources/base_move_resource.gd" id="1_jq1v6"]
+
+[resource]
+script = ExtResource("1_jq1v6")
+display_name = "Quick Hit"
+damage = 2.0
+accuracy = 1.0
+crit_chance = 0.05

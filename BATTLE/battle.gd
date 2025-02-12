@@ -7,7 +7,11 @@ signal textbox_closed
 var current_player_health = 0
 var current_enemy_health = 0
 
+var rng = RandomNumberGenerator.new()
+
 func _ready():
+	rng.randomize()
+	
 	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
 	set_health($Enemy/EnemyHealthBar, enemy.health, enemy.health)
 	$Enemy.texture = enemy.texture
@@ -27,14 +31,26 @@ func set_health(progress_bar, health, max_health):
 	progress_bar.max_value = max_health
 
 func enemy_turn():
-	display_text("%s smacks you in the face!" % enemy.name.to_upper())
+	var chosen_move = enemy.moves[rng.randi_range(0, len(enemy.moves) - 1)]
+	display_text(str(enemy.name.to_upper(), " uses ", chosen_move.display_name))
 	await textbox_closed
 	
-	current_player_health = max(0, current_player_health - enemy.damage)
-	set_health($PlayerPanel/PlayerHealthBar, current_player_health, Gamestate.max_health)
-	
-	display_text("%s dealt %d damage!" % [enemy.name.to_upper(), enemy.damage])
-	await textbox_closed
+	var acc_roll = rng.randf_range(0, 1)
+	if acc_roll <= chosen_move.accuracy:
+		var applied_damage = chosen_move.damage
+		var crit_roll = rng.randf_range(0, 1)
+		if crit_roll <= chosen_move.crit_chance:
+			applied_damage *= 1.5
+			display_text("It's a critical hit!")
+			await textbox_closed
+		current_player_health = max(0, current_player_health - applied_damage)
+		set_health($PlayerPanel/PlayerHealthBar, current_player_health, Gamestate.max_health)
+		
+		display_text("%s dealt %d damage!" % [chosen_move.display_name.to_upper(), applied_damage])
+		await textbox_closed
+	else:
+		display_text("It misses!")
+		await textbox_closed
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $Textbox.visible:

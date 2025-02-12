@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="BaseEnemyResource" load_steps=3 format=3 uid="uid://byicgb15a2tng"]
+[gd_resource type="Resource" script_class="BaseEnemyResource" load_steps=6 format=3 uid="uid://byicgb15a2tng"]
 
+[ext_resource type="Script" path="res://ENEMY/Move_Resources/base_move_resource.gd" id="1_ms5tt"]
 [ext_resource type="Script" path="res://ENEMY/Level_Resources/base_enemy_resource.gd" id="1_uxn5d"]
 [ext_resource type="Texture2D" uid="uid://b1b0txl562h3" path="res://ASSETS/GENERAL ASSETS/radish_olivegarden.png" id="2_22frm"]
+[ext_resource type="Resource" uid="uid://d4l1h8c3d4sr" path="res://ENEMY/Move_Resources/move_hitA.tres" id="2_wj1m2"]
+[ext_resource type="Resource" uid="uid://c2wddnu4e48gg" path="res://ENEMY/Move_Resources/move_hitB.tres" id="3_ptcce"]
 
 [resource]
 script = ExtResource("1_uxn5d")
 texture = ExtResource("2_22frm")
-health = 10
-damage = 1
+health = 30.0
 speed = 200
+name = "Bob"
+moves = Array[ExtResource("1_ms5tt")]([ExtResource("2_wj1m2"), ExtResource("3_ptcce")])

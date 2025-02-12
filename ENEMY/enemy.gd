@@ -25,7 +25,6 @@ func fight_check():
 		var battle_instance = BATTLE.instantiate()
 		battle_instance.enemy = stats
 		get_parent().add_child(battle_instance)
-		print("LETS GO BOI | Battle Scene Adopted by Parent Node")
 		queue_free()
 
 func point_towards_player():

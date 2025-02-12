@@ -183,7 +183,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "ATTACK"
 
 [node name="Textbox" type="Panel" parent="."]
-visible = false
 offset_left = 285.0
 offset_top = 700.0
 offset_right = 1635.0
