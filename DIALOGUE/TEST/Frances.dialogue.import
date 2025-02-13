@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://delbyr1ipq2dn"
+path="res://.godot/imported/Frances.dialogue-a67ecccef75b135b3517ec2bb3166ac2.tres"
+
+[deps]
+
+source_file="res://DIALOGUE/TEST/Frances.dialogue"
+dest_files=["res://.godot/imported/Frances.dialogue-a67ecccef75b135b3517ec2bb3166ac2.tres"]
+
+[params]
+
+defaults=true
