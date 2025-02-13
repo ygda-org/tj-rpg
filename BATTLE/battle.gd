@@ -81,8 +81,3 @@ func _on_heal_pressed():
 	await textbox_closed
 	
 	enemy_turn()
-
-
-
-
-

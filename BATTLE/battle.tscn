@@ -17,14 +17,14 @@ bg_color = Color(1, 1, 1, 0.670588)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgdvl"]
 bg_color = Color(1, 1, 1, 0.866667)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa5nm"]
-bg_color = Color(0, 0.68, 0.612, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpa36"]
 bg_color = Color(0.258, 0.86, 0.7998, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b44uv"]
 bg_color = Color(0.258824, 0.858824, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa5nm"]
+bg_color = Color(0, 0.68, 0.612, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2mt1"]
 bg_color = Color(1, 1, 1, 1)
@@ -112,9 +112,9 @@ offset_top = 16.0
 offset_right = 903.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "RUN"
 
 [node name="Heal" type="Button" parent="ActionsPanel"]
@@ -124,9 +124,9 @@ offset_top = 16.0
 offset_right = 611.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "HEAL"
 
 [node name="Attack" type="Button" parent="ActionsPanel"]
@@ -136,9 +136,9 @@ offset_top = 16.0
 offset_right = 315.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "ATTACK"
 
 [node name="Textbox" type="Panel" parent="."]
