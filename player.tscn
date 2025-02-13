@@ -1,30 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://c808bonwvjpqo"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_bf6p6"]
-[ext_resource type="Texture2D" uid="uid://dle1cern7sgd8" path="res://ASSETS/_basemodel.png" id="2_l6f35"]
+[ext_resource type="Texture2D" uid="uid://dnxpka5knhrwf" path="res://ASSETS/small teremiah jeremiah.png" id="2_rl6ff"]
 [ext_resource type="PackedScene" uid="uid://gh5m7f5jcfih" path="res://INTERACTION/player_interact.tscn" id="3_07rft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcft1"]
-size = Vector2(249, 622)
+size = Vector2(130.5, 321)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iow7j"]
-size = Vector2(249.25, 237.5)
+size = Vector2(116.625, 147.75)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(482, 262)
 script = ExtResource("1_bf6p6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.46875, 0.46875)
-texture = ExtResource("2_l6f35")
+z_index = 4
+scale = Vector2(10, 10)
+texture = ExtResource("2_rl6ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 20)
+position = Vector2(-0.25, 7.5)
 shape = SubResource("RectangleShape2D_xcft1")
 
 [node name="player_interact" parent="." instance=ExtResource("3_07rft")]
 position = Vector2(-482, -262)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_interact"]
-position = Vector2(485.375, 349.25)
+position = Vector2(481.688, 344.875)
 shape = SubResource("RectangleShape2D_iow7j")
