@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseMoveResource" load_steps=2 format=3 uid="uid://c2wddnu4e48gg"]
+
+[ext_resource type="Script" path="res://ENEMY/Move_Resources/base_move_resource.gd" id="1_8shwf"]
+
+[resource]
+script = ExtResource("1_8shwf")
+display_name = "Big Punch"
+damage = 5.0
+accuracy = 0.5
+crit_chance = 0.1

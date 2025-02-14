@@ -2,23 +2,31 @@ extends Node2D
 
 signal textbox_closed
 
-@export var enemy: Resource = null
+#MUST be loaded by the enemy, or a lot of bad things will happen
+@export var enemy: BaseEnemyResource = null
 
 var current_player_health = 0
 var current_enemy_health = 0
 
+var rng = RandomNumberGenerator.new()
+
 func _ready():
+	#Generate Random Numbers
+	rng.randomize()
+	#Set the Player and Enemy Health bar
 	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
-	set_health($EnemyHealthBar, enemy.health, enemy.health)
+	set_health($Enemy/EnemyHealthBar, enemy.health, enemy.health)
+	#Pull and set Enemy Texture
+	#WARNING The Spire ratios are way wack. Someone should fix it.
 	$Enemy.texture = enemy.texture
-	
+	#Pull and set Player and Enemy health
 	current_player_health = Gamestate.current_health
 	current_enemy_health = enemy.health
-	
+	#Preemptivly Hide everything
 	$Textbox.hide()
 	$ActionsPanel.hide()
-	
-	display_text("a wild %s approaches omg (battle test)" % enemy.enemy_name.to_upper())
+	#Use our cool display method to start the battle
+	display_text("a wild %s approaches omg (battle test)" % enemy.name.to_upper())
 	await textbox_closed
 	$ActionsPanel.show()
 
@@ -27,13 +35,34 @@ func set_health(progress_bar, health, max_health):
 	progress_bar.max_value = max_health
 
 func enemy_turn():
-	display_text("%s smacks you in the face!" % enemy.enemy_name.to_upper())
+	#Randomly pick a move. Currently equally waited, so dumb AI.
+	var chosen_move = enemy.moves[rng.randi_range(0, len(enemy.moves) - 1)]
+	#Display chosen move
+	display_text(str(enemy.name.to_upper(), " uses ", chosen_move.display_name))
 	await textbox_closed
 	
-	current_player_health = max(0, current_player_health - enemy.damage)
+	#Roll accuracy
+	var acc_roll = rng.randf_range(0, 1)
+	if acc_roll > chosen_move.accuracy:#If it misses, it misses
+		display_text("It misses!")
+		await textbox_closed
+		return
+	#Continuing assuming it hits
+	#Store damage, as we might add crit
+	var applied_damage = chosen_move.damage
+	#Roll crit
+	var crit_roll = rng.randf_range(0, 1)
+	if crit_roll <= chosen_move.crit_chance:#If crit lands, apply 100% bonus
+		applied_damage *= 2
+		#Alert player of crit
+		display_text("It's a critical hit!")
+		await textbox_closed
+	#Apply damage
+	current_player_health = max(0, current_player_health - applied_damage)
+	#Update healthbar
 	set_health($PlayerPanel/PlayerHealthBar, current_player_health, Gamestate.max_health)
-	
-	display_text("%s dealt %d damage!" % [enemy.enemy_name.to_upper(), enemy.damage])
+	#Show damage dealt
+	display_text("%s dealt %d damage!" % [chosen_move.display_name.to_upper(), applied_damage])
 	await textbox_closed
 
 func _input(event):
@@ -48,27 +77,24 @@ func display_text(text):
 func _on_run_pressed():
 	display_text("got away safely (coward not very sigma of you)")
 	await textbox_closed
-	await get_tree().create_timer(.25).timeout
-	get_tree().quit() #should replace this with a signal to return to overworld
+	end_fight()
 
 func _on_attack_pressed():
 	display_text("sic em! miku miku beeeam!!!!")
 	await textbox_closed
 	
 	current_enemy_health = max(0, current_enemy_health - Gamestate.damage)
-	set_health($EnemyHealthBar, current_enemy_health, enemy.health)
+	set_health($Enemy/EnemyHealthBar, current_enemy_health, enemy.health)
 	
 	display_text("you dealt %d damage!" % Gamestate.damage)
 	await textbox_closed
 	
 	if current_enemy_health == 0:
-		display_text("%s was murdered in cold blood" % enemy.enemy_name.to_upper())
+		display_text("%s was murdered in cold blood" % enemy.name.to_upper())
 		await textbox_closed
-		
-		await get_tree().create_timer(.25).timeout
-		get_tree().quit() #should replace this with a signal to return to overworld
-	
-	enemy_turn()
+		end_fight()
+	else:
+		enemy_turn()
 
 func _on_heal_pressed():
 	display_text("you ate dan tat!! mmmmm")
@@ -81,3 +107,7 @@ func _on_heal_pressed():
 	await textbox_closed
 	
 	enemy_turn()
+
+func end_fight():
+	await get_tree().create_timer(.25).timeout
+	get_tree().quit() #should replace this with a signal to return to overworld
