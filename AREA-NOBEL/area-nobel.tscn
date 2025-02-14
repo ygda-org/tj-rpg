@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_gcdqk"]
 [ext_resource type="Texture2D" uid="uid://btci8s05dhih1" path="res://ASSETS/GENERAL ASSETS/walls.png" id="3_h2age"]
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="4_htfe0"]
-[ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="5_baw2k"]
+[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="5_baw2k"]
 [ext_resource type="Resource" uid="uid://delbyr1ipq2dn" path="res://DIALOGUE/TEST/Frances.dialogue" id="6_a3yaw"]
 [ext_resource type="Texture2D" uid="uid://cshdcvdeoq6ne" path="res://ASSETS/NPC ASSETS/Frances.png" id="7_2u2hm"]
 
