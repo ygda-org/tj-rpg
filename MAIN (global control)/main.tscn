@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://56jr0rno445u"]
+[gd_scene load_steps=8 format=3 uid="uid://56jr0rno445u"]
 
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_gy6ow"]
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="3_3xkmm"]
-[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
+[ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
 [ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_we861"]
+[ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="5_6reqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
 size = Vector2(85, 90.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mj0x"]
+size = Vector2(612, 472)
 
 [node name="Main" type="Node2D"]
 
@@ -26,3 +30,13 @@ offset_bottom = 267.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(938.5, 228.75)
 shape = SubResource("RectangleShape2D_agw5h")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="level_swap_zone" parent="Node" instance=ExtResource("5_6reqa")]
+position = Vector2(34, 650)
+to_scene_path = "res://AREA-NOBEL/area-nobel.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/level_swap_zone"]
+position = Vector2(-38, -617)
+shape = SubResource("RectangleShape2D_7mj0x")
