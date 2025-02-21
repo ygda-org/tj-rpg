@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgfwqdlq64q2"]
+
+[ext_resource type="Texture2D" uid="uid://qres8tqhcfro" path="res://ASSETS/GENERAL ASSETS/white tile.png" id="1_4hxsy"]
+[ext_resource type="Script" path="res://UI/player_ui.gd" id="1_b3fah"]
+[ext_resource type="Texture2D" uid="uid://byugt1dqp8ak7" path="res://ASSETS/GENERAL ASSETS/red tile.png" id="2_10xwq"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3fah")
+
+[node name="Healthbar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109375
+anchor_top = 0.944444
+anchor_right = 0.890625
+anchor_bottom = 0.990741
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_4hxsy")
+texture_progress = ExtResource("2_10xwq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1875
+anchor_top = 0.796296
+anchor_right = 0.8125
+anchor_bottom = 0.935185
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemSlot1" type="PanelContainer" parent="Hotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Hotbar/ItemSlot1"]
+layout_mode = 2
+
+[node name="ItemSlot2" type="PanelContainer" parent="Hotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Hotbar/ItemSlot2"]
+layout_mode = 2
+
+[node name="ItemSlot3" type="PanelContainer" parent="Hotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Hotbar/ItemSlot3"]
+layout_mode = 2
+
+[node name="ItemSlot4" type="PanelContainer" parent="Hotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Hotbar/ItemSlot4"]
+layout_mode = 2
+
+[node name="ItemSlot5" type="PanelContainer" parent="Hotbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Hotbar/ItemSlot5"]
+layout_mode = 2
