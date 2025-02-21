@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c808bonwvjpqo"]
+[gd_scene load_steps=7 format=3 uid="uid://c808bonwvjpqo"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_bf6p6"]
 [ext_resource type="Texture2D" uid="uid://dnxpka5knhrwf" path="res://ASSETS/small teremiah jeremiah.png" id="2_rl6ff"]
 [ext_resource type="PackedScene" uid="uid://gh5m7f5jcfih" path="res://INTERACTION/player_interact.tscn" id="3_07rft"]
+[ext_resource type="PackedScene" uid="uid://cgfwqdlq64q2" path="res://UI/player_ui.tscn" id="4_rr4f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcft1"]
 size = Vector2(130.5, 321)
@@ -32,3 +33,7 @@ shape = SubResource("RectangleShape2D_iow7j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="PlayerUI" parent="PlayerUI" instance=ExtResource("4_rr4f4")]
