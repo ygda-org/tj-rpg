@@ -13,6 +13,7 @@ size = Vector2(85, 90.5)
 [node name="EnemyTestMain" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_j2b5l")]
+position = Vector2(546, 358)
 
 [node name="Interactable" parent="." instance=ExtResource("2_31r65")]
 

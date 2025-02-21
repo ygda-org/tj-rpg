@@ -7,4 +7,4 @@ script = ExtResource("1_8shwf")
 display_name = "Big Punch"
 damage = 5.0
 accuracy = 0.5
-crit_chance = 0.1
+crit_chance = 1.0
