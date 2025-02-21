@@ -6,7 +6,7 @@ extends Area2D
 # The player shouldn't be able to interact if they are moving at the same time
 # If the player holds any keys in this array, the interaction won't count
 const bad_actions: Array = ["move_left", "move_right", "move_up", "move_down"]
-var can_interact: bool = true
+@export var can_interact: bool = true
 var playing_dialogue: bool = false
 
 func _process(_delta: float) -> void:	

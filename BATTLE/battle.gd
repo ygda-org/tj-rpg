@@ -7,12 +7,15 @@ signal textbox_closed
 
 var current_player_health = 0
 var current_enemy_health = 0
+var player
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
 	#Generate Random Numbers
 	rng.randomize()
+	player = $"../Player"
+	player.freeze(true)
 	#Set the Player and Enemy Health bar
 	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
 	set_health($Enemy/EnemyHealthBar, enemy.health, enemy.health)
@@ -110,4 +113,5 @@ func _on_heal_pressed():
 
 func end_fight():
 	await get_tree().create_timer(.25).timeout
-	get_tree().quit() #should replace this with a signal to return to overworld
+	player.freeze(false)
+	queue_free()
