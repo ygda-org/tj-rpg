@@ -3,12 +3,12 @@ extends CharacterBody2D
 const SPEED = 400
 const SLOW_WALK = 0.5
 var direction: Vector2 = Vector2(0,0)
-
+var can_move : bool = true
 
 func _physics_process(delta):
-	if(Gamestate.dialogue_playing):
+	if(Gamestate.dialogue_playing or not can_move):
 		return
-		
+	
 	direction = Vector2(0, 0)
 	
 	if Input.is_action_pressed("move_left"):
@@ -30,3 +30,13 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
+	
+func freeze(input : bool):
+	if(input):
+		$player_interact.can_interact = false
+		$Sprite.visible = false
+		can_move = false
+	else:
+		$player_interact.can_interact = true
+		$Sprite.visible = true
+		can_move = true
