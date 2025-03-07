@@ -23,21 +23,30 @@ func _deferred_goto_scene(path):
 	
 	get_tree().root.add_child(current_scene)
 	get_tree().current_scene = current_scene
-	
-	
+
 func save_scene_and_goto(path) -> Variant:
+	_deferred_save_scene_and_goto.call_deferred(path)
+	
+	return saved_scene_result
+	
+	
+func _deferred_save_scene_and_goto(path):
 	current_scene.process_mode = Node.PROCESS_MODE_DISABLED
 	current_scene.hide()
-	
+	get_tree().root.remove_child(current_scene)
+
 	saved_scene = current_scene
 	
 	var scene_loader = ResourceLoader.load(path)
 	current_scene = scene_loader.instantiate()
 	get_tree().root.add_child(current_scene)
 	
-	resolver = get_tree().create_timer(0)
-	await resolver.timeout
 	
+	resolver = get_tree().create_timer(9999) #Temporary await (make better later)
+	await resolver.timeout
+	resolver = null
+	
+	print("timed out!!")
 	current_scene.queue_free()
 	current_scene = saved_scene
 	saved_scene = null
@@ -45,9 +54,9 @@ func save_scene_and_goto(path) -> Variant:
 	current_scene.process_mode = Node.PROCESS_MODE_INHERIT
 	current_scene.show()
 	
+	get_tree().root.add_child(current_scene)
 	get_tree().current_scene = current_scene
 	
-	return saved_scene_result
 
 
 func end_temp_scene(result: Variant):
