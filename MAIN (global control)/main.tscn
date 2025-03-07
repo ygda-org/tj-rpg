@@ -1,22 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://56jr0rno445u"]
+[gd_scene load_steps=10 format=3 uid="uid://56jr0rno445u"]
 
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_gy6ow"]
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="3_3xkmm"]
-[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
+[ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
 [ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_we861"]
-[ext_resource type="PackedScene" path="res://MAIN (global control)/level_swap_zone.tscn" id="5_6reqa"]
+[ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="5_6reqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
-size = Vector2(85, 90.5)
+size = Vector2(313, 90.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mj0x"]
-size = Vector2(612, 472)
+[sub_resource type="LabelSettings" id="LabelSettings_psdbu"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4smge"]
+size = Vector2(332.5, 97)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ijcl"]
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_gy6ow")]
 
 [node name="Interactable" parent="." instance=ExtResource("3_3xkmm")]
+position = Vector2(0, -2)
 
 [node name="Dialogue" parent="Interactable" instance=ExtResource("3_d8gmx")]
 dialogue_resource = ExtResource("4_we861")
@@ -26,17 +34,67 @@ offset_left = 896.0
 offset_top = 191.0
 offset_right = 981.0
 offset_bottom = 267.0
+scale = Vector2(3.64, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(938.5, 228.75)
+position = Vector2(1052.5, 228.75)
 shape = SubResource("RectangleShape2D_agw5h")
 
-[node name="Node" type="Node" parent="."]
+[node name="Label" type="Label" parent="Interactable"]
+offset_left = 924.0
+offset_top = 205.0
+offset_right = 1057.0
+offset_bottom = 228.0
+scale = Vector2(2, 2)
+text = "Test the dialogue
+"
+label_settings = SubResource("LabelSettings_psdbu")
+metadata/_edit_use_anchors_ = true
 
-[node name="level_swap_zone" parent="Node" instance=ExtResource("5_6reqa")]
-position = Vector2(34, 650)
-to_scene_path = "res://AREA-NOBEL/area-nobel.tscn"
+[node name="level_swap_zone" parent="." instance=ExtResource("5_6reqa")]
+position = Vector2(0, -2)
+to_scene_path = "res://UI/start_menu.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/level_swap_zone"]
-position = Vector2(-38, -617)
-shape = SubResource("RectangleShape2D_7mj0x")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
+position = Vector2(-871.25, 194.5)
+shape = SubResource("RectangleShape2D_4smge")
+
+[node name="ColorRect" type="ColorRect" parent="level_swap_zone"]
+offset_left = -1033.0
+offset_top = 152.0
+offset_right = -710.0
+offset_bottom = 239.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="level_swap_zone"]
+offset_left = -1013.0
+offset_top = 177.0
+offset_right = -860.0
+offset_bottom = 200.0
+scale = Vector2(1.88, 1.88)
+text = "Test Scene Switcher"
+label_settings = SubResource("LabelSettings_7ijcl")
+
+[node name="level_swap_zone" parent="level_swap_zone" instance=ExtResource("5_6reqa")]
+position = Vector2(869, -828)
+to_scene_path = "res://TEST_MAIN (enemy settings)/enemy_test_main.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone/level_swap_zone"]
+position = Vector2(-871.25, 194.5)
+shape = SubResource("RectangleShape2D_4smge")
+
+[node name="ColorRect" type="ColorRect" parent="level_swap_zone/level_swap_zone"]
+offset_left = -1033.0
+offset_top = 152.0
+offset_right = -710.0
+offset_bottom = 239.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="level_swap_zone/level_swap_zone"]
+offset_left = -1013.0
+offset_top = 180.0
+offset_right = -860.0
+offset_bottom = 203.0
+scale = Vector2(1.88, 1.88)
+text = "Test Battle Scene"
+label_settings = SubResource("LabelSettings_7ijcl")

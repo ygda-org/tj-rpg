@@ -8,7 +8,6 @@ var can_move : bool = true
 func _physics_process(delta):
 	if(Gamestate.dialogue_playing or not can_move):
 		return
-	
 	direction = Vector2(0, 0)
 	
 	if Input.is_action_pressed("move_left"):

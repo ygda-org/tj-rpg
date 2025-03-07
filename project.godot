@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TJ-RPG"
-run/main_scene="res://MAIN (global control)/main.tscn"
+run/main_scene="res://UI/start_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://test-image.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://test-image.svg"
 
 Gamestate="*res://MAIN (global control)/gamestate.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SceneSwitcher="*res://MAIN (global control)/scene_switcher.gd"
 
 [display]
 
