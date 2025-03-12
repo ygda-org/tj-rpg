@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c5vbynx3p3gwc"]
+
+[node name="Area-art-gallery-hall" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
