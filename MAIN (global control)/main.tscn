@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_gy6ow"]
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="3_3xkmm"]
-[ext_resource type="PackedScene" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
+[ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="3_d8gmx"]
 [ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_we861"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="5_6reqa"]
 
@@ -54,7 +54,7 @@ metadata/_edit_use_anchors_ = true
 [node name="level_swap_zone2" parent="." instance=ExtResource("5_6reqa")]
 position = Vector2(869, -830)
 to_scene_path = "res://BATTLE/battle.tscn"
-one_shot = true
+save_scene = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone2"]
 position = Vector2(-871.25, 194.5)
