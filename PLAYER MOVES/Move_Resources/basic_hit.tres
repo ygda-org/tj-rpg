@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BasePlayerMove" load_steps=2 format=3 uid="uid://ccfwsxa01s48l"]
+
+[ext_resource type="Script" path="res://PLAYER MOVES/Move_Resources/base_player_move.gd" id="1_jjhn0"]
+
+[resource]
+script = ExtResource("1_jjhn0")
+display_name = "Punch"
+damage = 10.0
+accuracy = 1.0
+crit_chance = 0.05

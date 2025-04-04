@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BasePlayerMove" load_steps=2 format=3 uid="uid://b6l1vqb6poi2h"]
+
+[ext_resource type="Script" path="res://PLAYER MOVES/Move_Resources/base_player_move.gd" id="1_7rm6q"]
+
+[resource]
+script = ExtResource("1_7rm6q")
+display_name = "Big Punch"
+damage = 15.0
+accuracy = 0.75
+crit_chance = 0.2

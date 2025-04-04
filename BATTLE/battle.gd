@@ -4,17 +4,22 @@ signal textbox_closed
 
 #MUST be loaded by the enemy, or a lot of bad things will happen
 @export var enemy: BaseEnemyResource = null
+@export var previous_scene = null
 
 var current_player_health = 0
 var current_enemy_health = 0
-var player
+@export var player = null
+
+var background : Texture2D
 
 var rng = RandomNumberGenerator.new()
 
 func _ready():
 	#Generate Random Numbers
 	rng.randomize()
-	player = $"../Player"
+	#Set background
+	if background != null:
+		$Background.texture = background
 	player.freeze(true)
 	#Set the Player and Enemy Health bar
 	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
@@ -114,4 +119,4 @@ func _on_heal_pressed():
 func end_fight():
 	await get_tree().create_timer(.25).timeout
 	player.freeze(false)
-	queue_free()
+	SceneSwitcher.end_temp_scene(self)
