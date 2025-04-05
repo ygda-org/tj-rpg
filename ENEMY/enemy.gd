@@ -18,14 +18,22 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	point_towards_player()
 	fight_check()
-	move_and_slide()
+	#move_and_slide()
 
 func fight_check():
 	if (player.position - self.position).length() < 200:
-		var battle_instance = BATTLE.instantiate()
-		battle_instance.enemy = stats
-		get_parent().add_child(battle_instance)
-		queue_free()
+		start_battle()
+		suicide()
+
+func start_battle():
+	var battle_instance = BATTLE.instantiate()
+	battle_instance.enemy = stats
+	battle_instance.player = player
+	var prev_scene = SceneSwitcher.save_scene_and_goto(battle_instance)
+	battle_instance.previous_scene = get_parent()
+
+func suicide():
+	queue_free()
 
 func point_towards_player():
 	self.velocity = (player.position - self.position).normalized() * speed
