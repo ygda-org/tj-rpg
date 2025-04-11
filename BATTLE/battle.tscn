@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ybwynx8lkdr5"]
+[gd_scene load_steps=13 format=3 uid="uid://ybwynx8lkdr5"]
 
 [ext_resource type="Texture2D" uid="uid://maokcyd0gft3" path="res://test-image.svg" id="1_baobv"]
 [ext_resource type="Texture2D" uid="uid://b6iy3oi2bo457" path="res://ASSETS/BATTLE ASSETS/TestBG.jpg" id="1_onmo0"]
 [ext_resource type="Script" path="res://BATTLE/battle.gd" id="1_p7l2w"]
+[ext_resource type="Resource" uid="uid://byicgb15a2tng" path="res://ENEMY/Level_Resources/base_enemy-STAT.tres" id="2_vinw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ojeh"]
 bg_color = Color(0.907942, 0.907942, 0.907942, 1)
@@ -40,6 +41,7 @@ corner_radius_bottom_left = 10
 [node name="Battle" type="Node2D"]
 z_index = -1
 script = ExtResource("1_p7l2w")
+enemy = ExtResource("2_vinw0")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
