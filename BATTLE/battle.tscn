@@ -49,9 +49,9 @@ expand_mode = 1
 
 [node name="Enemy" type="TextureRect" parent="."]
 offset_left = 810.0
-offset_top = 250.0
+offset_top = 180.0
 offset_right = 1110.0
-offset_bottom = 550.0
+offset_bottom = 480.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_baobv")
@@ -113,22 +113,30 @@ value = 50.0
 show_percentage = false
 
 [node name="ActionsPanel" type="Panel" parent="."]
-offset_top = 760.0
-offset_right = 1920.0
+offset_left = 347.0
+offset_top = 570.0
+offset_right = 1572.0
 offset_bottom = 920.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sgdvl")
 
-[node name="Run" type="Button" parent="ActionsPanel"]
+[node name="PlayerOptions" type="Control" parent="ActionsPanel"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 37.0
+offset_right = 90.0
+offset_bottom = 77.0
+
+[node name="Run" type="Button" parent="ActionsPanel/PlayerOptions"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -600.0
-offset_top = -45.0
-offset_right = -100.0
-offset_bottom = 45.0
+offset_left = -40.0
+offset_top = 180.0
+offset_right = 310.0
+offset_bottom = 255.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -137,17 +145,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "RUN"
 
-[node name="Heal" type="Button" parent="ActionsPanel"]
+[node name="Heal" type="Button" parent="ActionsPanel/PlayerOptions"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -45.0
-offset_right = 250.0
-offset_bottom = 45.0
+offset_left = -20.0
+offset_top = 80.0
+offset_right = 330.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -156,15 +164,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "HEAL"
 
-[node name="Attack" type="Button" parent="ActionsPanel"]
+[node name="Attack" type="Button" parent="ActionsPanel/PlayerOptions"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -45.0
-offset_right = 600.0
-offset_bottom = 45.0
+offset_top = -20.0
+offset_right = 350.0
+offset_bottom = 55.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
@@ -172,7 +179,41 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
 text = "ATTACK"
 
+[node name="AttackOptions" type="Control" parent="ActionsPanel"]
+anchors_preset = 0
+offset_left = 450.0
+offset_top = 37.0
+offset_right = 490.0
+offset_bottom = 77.0
+
+[node name="Move0" type="Button" parent="ActionsPanel/AttackOptions"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Move1" type="Button" parent="ActionsPanel/AttackOptions"]
+layout_mode = 0
+offset_left = 375.0
+offset_right = 725.0
+offset_bottom = 125.0
+
+[node name="Move2" type="Button" parent="ActionsPanel/AttackOptions"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 350.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Move3" type="Button" parent="ActionsPanel/AttackOptions"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 150.0
+offset_right = 725.0
+offset_bottom = 275.0
+
 [node name="Textbox" type="Panel" parent="."]
+visible = false
 offset_left = 285.0
 offset_top = 700.0
 offset_right = 1635.0
@@ -206,6 +247,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = ">"
 
-[connection signal="pressed" from="ActionsPanel/Run" to="." method="_on_run_pressed"]
-[connection signal="pressed" from="ActionsPanel/Heal" to="." method="_on_heal_pressed"]
-[connection signal="pressed" from="ActionsPanel/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="ActionsPanel/PlayerOptions/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="ActionsPanel/PlayerOptions/Heal" to="." method="_on_heal_pressed"]
+[connection signal="pressed" from="ActionsPanel/PlayerOptions/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="ActionsPanel/AttackOptions/Move0" to="." method="_on_move_pressed" binds= [0]]
+[connection signal="pressed" from="ActionsPanel/AttackOptions/Move1" to="." method="_on_move_pressed" binds= [1]]
+[connection signal="pressed" from="ActionsPanel/AttackOptions/Move2" to="." method="_on_move_pressed" binds= [2]]
+[connection signal="pressed" from="ActionsPanel/AttackOptions/Move3" to="." method="_on_move_pressed" binds= [3]]

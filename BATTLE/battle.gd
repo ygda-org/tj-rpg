@@ -1,6 +1,7 @@
 extends Node2D
 
 signal textbox_closed
+signal pressed
 
 #MUST be loaded by the enemy, or a lot of bad things will happen
 @export var enemy: BaseEnemyResource = null
@@ -11,6 +12,8 @@ var current_enemy_health = 0
 @export var player = null
 
 var background : Texture2D
+
+var loaded_move_index : int = -1
 
 var rng = RandomNumberGenerator.new()
 
@@ -33,10 +36,22 @@ func _ready():
 	#Preemptivly Hide everything
 	$Textbox.hide()
 	$ActionsPanel.hide()
+	$ActionsPanel/PlayerOptions.hide()
+	$ActionsPanel/AttackOptions.hide()
+	#Load in the Player moves
+	load_moves()
 	#Use our cool display method to start the battle
 	display_text("a wild %s approaches omg (battle test)" % enemy.name.to_upper())
 	await textbox_closed
+	#Show Player Options
 	$ActionsPanel.show()
+	$ActionsPanel/PlayerOptions.show()
+
+func load_moves():
+	for i in range(0, len(Gamestate.player_moves)):
+		var moveButton = find_child("Move" + str(i))
+		var move : BasePlayerMove = Gamestate.player_moves[i]
+		moveButton.text = move.display_name.to_upper()
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -88,13 +103,18 @@ func _on_run_pressed():
 	end_fight()
 
 func _on_attack_pressed():
-	display_text("sic em! miku miku beeeam!!!!")
+	$ActionsPanel/AttackOptions.show()
+	await pressed
+	
+	var chosen_move : BasePlayerMove = Gamestate.player_moves[loaded_move_index]
+	
+	display_text("You used " + chosen_move.display_name)
 	await textbox_closed
 	
-	current_enemy_health = max(0, current_enemy_health - Gamestate.damage)
+	current_enemy_health = max(0, current_enemy_health - chosen_move.damage)
 	set_health($Enemy/EnemyHealthBar, current_enemy_health, enemy.health)
 	
-	display_text("you dealt %d damage!" % Gamestate.damage)
+	display_text("You dealt %d damage!" % chosen_move.damage)
 	await textbox_closed
 	
 	if current_enemy_health == 0:
@@ -120,3 +140,8 @@ func end_fight():
 	await get_tree().create_timer(.25).timeout
 	player.freeze(false)
 	SceneSwitcher.end_temp_scene(self)
+
+
+func _on_move_pressed(move_index: int) -> void:
+	loaded_move_index = move_index
+	emit_signal("pressed")
