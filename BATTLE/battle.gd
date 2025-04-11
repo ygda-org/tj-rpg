@@ -1,6 +1,7 @@
 extends Node2D
 
 signal textbox_closed
+signal move_chosen
 
 #MUST be loaded by the enemy, or a lot of bad things will happen
 @export var enemy: BaseEnemyResource = null
@@ -12,6 +13,8 @@ var current_enemy_health = 0
 
 var background : Texture2D
 
+var loaded_move_index : int = -1
+
 var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -20,7 +23,8 @@ func _ready():
 	#Set background
 	if background != null:
 		$Background.texture = background
-	player.freeze(true)
+	if(player != null):
+		player.freeze(true)
 	#Set the Player and Enemy Health bar
 	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
 	set_health($Enemy/EnemyHealthBar, enemy.health, enemy.health)
@@ -33,10 +37,23 @@ func _ready():
 	#Preemptivly Hide everything
 	$Textbox.hide()
 	$ActionsPanel.hide()
+	$ActionsPanel/PlayerOptions.hide()
+	$ActionsPanel/AttackOptions.hide()
+	#Load in the Player moves
+	load_moves()
 	#Use our cool display method to start the battle
 	display_text("a wild %s approaches omg (battle test)" % enemy.name.to_upper())
 	await textbox_closed
+	#Show Player Options
 	$ActionsPanel.show()
+	$ActionsPanel/PlayerOptions.show()
+	slideActionPanel(570+350,570,0.1)
+
+func load_moves():
+	for i in range(0, len(Gamestate.player_moves)):
+		var moveButton = find_child("Move" + str(i))
+		var move : BasePlayerMove = Gamestate.player_moves[i]
+		moveButton.text = move.display_name.to_upper()
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -72,6 +89,15 @@ func enemy_turn():
 	#Show damage dealt
 	display_text("%s dealt %d damage!" % [chosen_move.display_name.to_upper(), applied_damage])
 	await textbox_closed
+	slideActionPanel(570+350,570,0.1)
+
+##direction is a string either called "up" or "down"
+func slideActionPanel(A,B,slide_length):
+	# WARNING Terrible god awful loop. I will absolutely fix this
+	for t in range(0,101,1):
+		$ActionsPanel.position.y = A + (B-A) * (t/100.0)
+		print(t)
+		await get_tree().create_timer(slide_length/100.0).timeout
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $Textbox.visible:
@@ -88,13 +114,18 @@ func _on_run_pressed():
 	end_fight()
 
 func _on_attack_pressed():
-	display_text("sic em! miku miku beeeam!!!!")
+	$ActionsPanel/AttackOptions.show()
+	await move_chosen
+	
+	var chosen_move : BasePlayerMove = Gamestate.player_moves[loaded_move_index]
+	
+	display_text("You used " + chosen_move.display_name)
 	await textbox_closed
 	
-	current_enemy_health = max(0, current_enemy_health - Gamestate.damage)
+	current_enemy_health = max(0, current_enemy_health - chosen_move.damage)
 	set_health($Enemy/EnemyHealthBar, current_enemy_health, enemy.health)
 	
-	display_text("you dealt %d damage!" % Gamestate.damage)
+	display_text("You dealt %d damage!" % chosen_move.damage)
 	await textbox_closed
 	
 	if current_enemy_health == 0:
@@ -102,6 +133,8 @@ func _on_attack_pressed():
 		await textbox_closed
 		end_fight()
 	else:
+		$ActionsPanel/AttackOptions.hide()
+		slideActionPanel(570,570+350,0.1)
 		enemy_turn()
 
 func _on_heal_pressed():
@@ -120,3 +153,8 @@ func end_fight():
 	await get_tree().create_timer(.25).timeout
 	player.freeze(false)
 	SceneSwitcher.end_temp_scene(self)
+
+
+func _on_move_pressed(move_index: int) -> void:
+	loaded_move_index = move_index
+	emit_signal("move_chosen")
