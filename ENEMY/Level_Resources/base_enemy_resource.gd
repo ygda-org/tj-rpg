@@ -6,4 +6,4 @@ class_name BaseEnemyResource
 @export var speed: int = 10
 @export var name: String = "Bob"
 
-@export var moves: Array[BaseMoveResource]
+@export var obstacle_loadout : Array[ObstaclePackage] = []
