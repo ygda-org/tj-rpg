@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="3_5acn4"]
 [ext_resource type="Resource" uid="uid://ceohf1jxj1lv1" path="res://DIALOGUE/TEST/test.dialogue" id="4_7hvn2"]
 [ext_resource type="PackedScene" uid="uid://drwv5ncjto1v1" path="res://ENEMY/enemy.tscn" id="5_q7okn"]
-[ext_resource type="Resource" uid="uid://byicgb15a2tng" path="res://ENEMY/Level_Resources/base_enemy-STAT.tres" id="6_h2v3r"]
+[ext_resource type="Resource" uid="uid://byicgb15a2tng" path="res://ENEMY/Level_Resources/testing_stats.tres" id="6_h2v3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
 size = Vector2(85, 90.5)
