@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BasePlayerMove" load_steps=2 format=3 uid="uid://c0bvcqlmgv5eb"]
+
+[ext_resource type="Script" path="res://PLAYER MOVES/Move_Resources/base_player_move.gd" id="1_2tfor"]
+
+[resource]
+script = ExtResource("1_2tfor")
+display_name = "Agility"
+damage = 0.0
+accuracy = 0.8
+crit_chance = 0.0
+player_speed = 3
+player_defense = 1.0

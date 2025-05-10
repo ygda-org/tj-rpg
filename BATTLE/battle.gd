@@ -11,6 +11,7 @@ const FIGHT_MANAGER = preload("res://ENEMY/FightManager/fight_manager.tscn")
 
 var current_player_health = 0
 var current_enemy_health = 0
+var player_stats = {"speed": 2.0, "defense": 1.0, "size": 1.0}
 @export var player = null
 
 var background : Texture2D
@@ -82,6 +83,7 @@ func enemy_turn():
 	
 	var fight_instance = FIGHT_MANAGER.instantiate() 
 	fight_instance.obst_package_list = enemy.obstacle_loadout.duplicate()
+	fight_instance.player_stat_list = player_stats
 	add_child(fight_instance)
 	fight_instance.visible = true
 	await fight_instance.fight_finished
@@ -132,15 +134,26 @@ func _on_attack_pressed():
 	
 	current_enemy_health = max(0, current_enemy_health - chosen_move.damage)
 	set_health($Enemy/EnemyHealthBar, current_enemy_health, enemy.health)
-	
-	display_text("You dealt %d damage!" % chosen_move.damage)
-	await textbox_closed
+	if (chosen_move.damage != 0):
+		display_text("You dealt %d damage!" % chosen_move.damage)
+		await textbox_closed
+	if (chosen_move.damage == 0): # not this specifically but change later for special effect moves
+		display_text("Some other special effect ig lol")
+		await textbox_closed
 	
 	if current_enemy_health == 0:
 		display_text("%s was murdered in cold blood" % enemy.name.to_upper())
 		await textbox_closed
 		end_fight()
 	else:
+		# handling stat changing moves for the player
+		if (chosen_move.player_speed != 2.0): # ngl there's gotta be a better way to store it but my brain no workie
+			player_stats["speed"] = chosen_move.player_speed
+		if (chosen_move.player_defense != 1.0):
+			player_stats["defense"] = chosen_move.player_defense
+		if (chosen_move.player_size_scale != 1.0):
+			player_stats["size"] = chosen_move.player_size_scale
+		# 
 		$AnimationPlayer.play_backwards("slide_action_panel")
 		$ActionsPanel/AttackOptions.hide()
 		enemy_turn()

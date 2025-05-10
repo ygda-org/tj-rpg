@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 400
+const SPEED = 45
 const SLOW_WALK = 0.5
 var direction: Vector2 = Vector2(0,0)
 var can_move : bool = true
@@ -17,6 +17,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_up"):
 		direction.y = -1
 	if Input.is_action_pressed("move_down"):
+		$Anim.play("Walk Forward")
 		direction.y = 1
 	
 	direction = direction.normalized()	
