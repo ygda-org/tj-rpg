@@ -65,7 +65,8 @@ func _process(delta: float) -> void:
 		parent.exit_sequence()
 
 func _on_area_entered(area: Area2D):
-	Gamestate.current_health -= damage
+	var player_defense = get_node("/root/Battle").player_stats["defense"]
+	Gamestate.current_health -= damage * player_defense
 	print(Gamestate.current_health)
 	get_node("/root/Battle").update_player_health()
 	area_2d.monitoring = false

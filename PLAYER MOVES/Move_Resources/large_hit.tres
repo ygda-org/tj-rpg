@@ -6,5 +6,8 @@
 script = ExtResource("1_7rm6q")
 display_name = "Big Punch"
 damage = 15.0
-accuracy = 0.75
+accuracy = 0.95
 crit_chance = 0.2
+player_speed = 1
+player_defense = 1.0
+player_size_scale = 1.0

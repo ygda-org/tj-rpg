@@ -2,14 +2,18 @@ extends Node2D
 class_name FightManager
 
 @export var obst_package_list : Array[ObstaclePackage]
+@export var player_stat_list : Dictionary
 
 @onready var player = $Player
-var speed : int = 2
+@onready var player_sprite = $Player/Sprite2D
+@onready var player_collision = $Player/CollisionShape2D
+var speed : float = 2.0
 var elapsed_time : float = 0.0
 
 signal fight_finished
 
 func _ready() -> void:
+	update_player_stats()
 	position = Vector2(1920/2 - 732/2, 1080/2 - 482/2)
 
 
@@ -17,6 +21,11 @@ func _process(delta: float) -> void:
 	update_elapsed_time(delta)
 	update_player()
 	load_obstacles()
+
+func update_player_stats():
+	speed = player_stat_list["speed"]
+	player_sprite.scale = Vector2(player_stat_list["size"], player_stat_list["size"])
+	player_collision.scale = Vector2(player_stat_list["size"], player_stat_list["size"])
 
 func update_elapsed_time(delta: float) -> void:
 	elapsed_time += delta

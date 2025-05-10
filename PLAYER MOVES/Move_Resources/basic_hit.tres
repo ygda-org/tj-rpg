@@ -8,3 +8,6 @@ display_name = "Punch"
 damage = 10.0
 accuracy = 1.0
 crit_chance = 0.05
+player_speed = 2
+player_defense = 1.0
+player_size_scale = 1.0
