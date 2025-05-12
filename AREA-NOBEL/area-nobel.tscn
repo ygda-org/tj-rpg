@@ -72,7 +72,7 @@ position = Vector2(88, -42)
 
 [node name="level_swap_zone" parent="." instance=ExtResource("9_yu6ju")]
 position = Vector2(312, -308)
-to_scene_path = "D:/YGDA/tj-rpg/AREA-1/area-art-gallery-hall.tscn"
+to_scene_path = "res://AREA-1/area-art-gallery-hall.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
 position = Vector2(4, 12)
