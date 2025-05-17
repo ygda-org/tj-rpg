@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsv3desnmdwk8"
-path="res://.godot/imported/tiles.png-75abb8354bb4b0637ff3c64f06ee9a84.ctex"
+uid="uid://b7sg0ak4dx0cs"
+path="res://.godot/imported/orchestra_kid.png-0165b5e05b2f3da1d3a11ab159e5b2c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GENERAL ASSETS/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-75abb8354bb4b0637ff3c64f06ee9a84.ctex"]
+source_file="res://ASSETS/NPC ASSETS/orchestra_kid.png"
+dest_files=["res://.godot/imported/orchestra_kid.png-0165b5e05b2f3da1d3a11ab159e5b2c5.ctex"]
 
 [params]
 

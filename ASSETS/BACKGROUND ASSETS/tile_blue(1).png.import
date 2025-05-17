@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byugt1dqp8ak7"
-path="res://.godot/imported/red tile.png-34c813cb712e690de6aed2b3d145e5dc.ctex"
+uid="uid://cyu1unxu4uri8"
+path="res://.godot/imported/tile_blue(1).png-91bed7416cd2fcf1f175f6900c9b1c5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GENERAL ASSETS/red tile.png"
-dest_files=["res://.godot/imported/red tile.png-34c813cb712e690de6aed2b3d145e5dc.ctex"]
+source_file="res://ASSETS/BACKGROUND ASSETS/tile_blue(1).png"
+dest_files=["res://.godot/imported/tile_blue(1).png-91bed7416cd2fcf1f175f6900c9b1c5f.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

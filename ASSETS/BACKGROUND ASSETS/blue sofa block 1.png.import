@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk8n0t4e8xriw"
-path="res://.godot/imported/door-temp.png-516aa96ac3b7a21517fa13b7563cac5d.ctex"
+uid="uid://xx5jjmcr5mmp"
+path="res://.godot/imported/blue sofa block 1.png-0cb67f7f9d1ad8af7014edf642ffe7f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GENERAL ASSETS/door-temp.png"
-dest_files=["res://.godot/imported/door-temp.png-516aa96ac3b7a21517fa13b7563cac5d.ctex"]
+source_file="res://ASSETS/BACKGROUND ASSETS/blue sofa block 1.png"
+dest_files=["res://.godot/imported/blue sofa block 1.png-0cb67f7f9d1ad8af7014edf642ffe7f7.ctex"]
 
 [params]
 

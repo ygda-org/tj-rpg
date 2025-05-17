@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="5_6reqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agw5h"]
-size = Vector2(313, 90.5)
+size = Vector2(112.5, 33.25)
 
 [sub_resource type="LabelSettings" id="LabelSettings_psdbu"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4smge"]
-size = Vector2(332.5, 97)
+size = Vector2(103.625, 28.75)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ijcl"]
 font_color = Color(0, 0, 0, 1)
@@ -22,7 +22,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_gy6ow")]
-scale = Vector2(5, 5)
+scale = Vector2(1.0065, 1.00349)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 
@@ -33,22 +33,22 @@ position = Vector2(0, 1)
 dialogue_resource = ExtResource("4_we861")
 
 [node name="ColorRect" type="ColorRect" parent="Interactable"]
-offset_left = 517.0
-offset_top = -26.0
-offset_right = 602.0
-offset_bottom = 50.0
-scale = Vector2(3.64, 1)
+offset_left = 115.0
+offset_top = -15.0
+offset_right = 200.0
+offset_bottom = 61.0
+scale = Vector2(1.33552, 0.417621)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(666, 7)
+position = Vector2(169.75, 2.375)
 shape = SubResource("RectangleShape2D_agw5h")
 
 [node name="Label" type="Label" parent="Interactable"]
-offset_left = 536.0
-offset_top = -20.0
-offset_right = 669.0
-offset_bottom = 3.0
-scale = Vector2(2, 2)
+offset_left = 119.0
+offset_top = -13.0
+offset_right = 252.0
+offset_bottom = 10.0
+scale = Vector2(0.745341, 1.11464)
 text = "Test the dialogue
 "
 label_settings = SubResource("LabelSettings_psdbu")
@@ -60,46 +60,48 @@ to_scene_path = "res://BATTLE/battle.tscn"
 save_scene = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone2"]
-position = Vector2(-862, 649)
+position = Vector2(-866, 780)
 shape = SubResource("RectangleShape2D_4smge")
 
 [node name="ColorRect" type="ColorRect" parent="level_swap_zone2"]
-offset_left = -1021.0
-offset_top = 603.0
-offset_right = -698.0
-offset_bottom = 690.0
+offset_left = -912.0
+offset_top = 766.0
+offset_right = -589.0
+offset_bottom = 853.0
+scale = Vector2(0.262438, 0.352238)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level_swap_zone2"]
-offset_left = -995.0
-offset_top = 635.0
-offset_right = -842.0
-offset_bottom = 658.0
-scale = Vector2(1.88, 1.88)
+offset_left = -905.0
+offset_top = 769.0
+offset_right = -752.0
+offset_bottom = 792.0
+scale = Vector2(0.569864, 1.08914)
 text = "Test Battle Scene"
 label_settings = SubResource("LabelSettings_7ijcl")
 
 [node name="level_swap_zone" parent="." instance=ExtResource("5_6reqa")]
 position = Vector2(0, -2)
-to_scene_path = "D:/YGDA/tj-rpg/AREA-NOBEL/area-nobel.tscn"
+to_scene_path = "res://UI/start_menu.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
-position = Vector2(-623, 10)
+position = Vector2(-178, 6)
 shape = SubResource("RectangleShape2D_4smge")
 
 [node name="ColorRect" type="ColorRect" parent="level_swap_zone"]
-offset_left = -787.0
-offset_top = -37.0
-offset_right = -464.0
-offset_bottom = 50.0
+offset_left = -238.0
+offset_top = -15.0
+offset_right = 85.0
+offset_bottom = 72.0
+scale = Vector2(0.373193, 0.470263)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level_swap_zone"]
-offset_left = -781.0
-offset_top = -21.0
-offset_right = -628.0
-offset_bottom = 2.0
-scale = Vector2(1.88, 1.88)
+offset_left = -234.0
+offset_top = -17.0
+offset_right = -81.0
+offset_bottom = 6.0
+scale = Vector2(0.694217, 1.8161)
 text = "Test Scene Switcher"
 label_settings = SubResource("LabelSettings_7ijcl")
 
@@ -109,21 +111,22 @@ to_scene_path = "res://AREA-NOBEL/area-nobel.tscn"
 save_scene = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone3"]
-position = Vector2(-850, 1189)
+position = Vector2(-874.625, 900.25)
 shape = SubResource("RectangleShape2D_4smge")
 
 [node name="ColorRect" type="ColorRect" parent="level_swap_zone3"]
-offset_left = -993.0
-offset_top = 1143.0
-offset_right = -670.0
-offset_bottom = 1230.0
+offset_left = -921.0
+offset_top = 889.0
+offset_right = -598.0
+offset_bottom = 976.0
+scale = Vector2(0.287739, 0.252437)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level_swap_zone3"]
-offset_left = -983.0
-offset_top = 1167.0
-offset_right = -830.0
-offset_bottom = 1190.0
-scale = Vector2(1.88, 1.88)
+offset_left = -916.0
+offset_top = 889.0
+offset_right = -763.0
+offset_bottom = 912.0
+scale = Vector2(0.613112, 0.853588)
 text = "Test Actual Game"
 label_settings = SubResource("LabelSettings_7ijcl")
