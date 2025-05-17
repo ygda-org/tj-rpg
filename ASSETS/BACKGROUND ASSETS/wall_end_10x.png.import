@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dle1cern7sgd8"
-path="res://.godot/imported/_basemodel.png-689a294c74cb428582ea6ca98bb1751b.ctex"
+uid="uid://bheae26aexhe3"
+path="res://.godot/imported/wall_end_10x.png-c36ef4119bd03f27fb8ca468d4db0a05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/_basemodel.png"
-dest_files=["res://.godot/imported/_basemodel.png-689a294c74cb428582ea6ca98bb1751b.ctex"]
+source_file="res://ASSETS/BACKGROUND ASSETS/wall_end_10x.png"
+dest_files=["res://.godot/imported/wall_end_10x.png-c36ef4119bd03f27fb8ca468d4db0a05.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

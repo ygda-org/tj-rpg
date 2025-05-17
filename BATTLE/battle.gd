@@ -173,7 +173,6 @@ func _on_heal_pressed():
 
 func end_fight():
 	await get_tree().create_timer(.25).timeout
-	player.freeze(false)
 	SceneSwitcher.end_temp_scene(self)
 
 

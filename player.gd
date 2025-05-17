@@ -17,7 +17,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_up"):
 		direction.y = -1
 	if Input.is_action_pressed("move_down"):
-		$Anim.play("Walk Forward")
 		direction.y = 1
 	
 	direction = direction.normalized()	
@@ -28,7 +27,10 @@ func _physics_process(delta):
 	if(Input.is_action_pressed("slow_walk")):
 		velocity *= SLOW_WALK
 	
-	
+	if velocity == Vector2(0,0):
+		$Anim.play("idle")
+	else:
+		$Anim.play("Walk Forward")
 	move_and_slide()
 	
 func freeze(input : bool):

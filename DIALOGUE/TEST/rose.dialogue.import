@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c4ej3wsjfeu0r"
+path="res://.godot/imported/rose.dialogue-80a1d23ebbce3d409cb6baff33147cc7.tres"
+
+[deps]
+
+source_file="res://DIALOGUE/TEST/rose.dialogue"
+dest_files=["res://.godot/imported/rose.dialogue-80a1d23ebbce3d409cb6baff33147cc7.tres"]
+
+[params]
+
+defaults=true

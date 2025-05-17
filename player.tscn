@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c808bonwvjpqo"]
+[gd_scene load_steps=13 format=3 uid="uid://c808bonwvjpqo"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_bf6p6"]
 [ext_resource type="Texture2D" uid="uid://csd2mlyw3htoo" path="res://ASSETS/Forward walk cycle spritesheet.png" id="2_jn5ls"]
 [ext_resource type="PackedScene" uid="uid://gh5m7f5jcfih" path="res://INTERACTION/player_interact.tscn" id="3_07rft"]
+[ext_resource type="Texture2D" uid="uid://dnxpka5knhrwf" path="res://ASSETS/small teremiah jeremiah.png" id="3_52kdg"]
 [ext_resource type="PackedScene" uid="uid://cgfwqdlq64q2" path="res://UI/player_ui.tscn" id="4_rr4f4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ys73"]
@@ -40,9 +41,12 @@ animations = [{
 "name": &"Walk Forward",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"default",
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_52kdg")
+}],
+"loop": false,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -59,9 +63,7 @@ script = ExtResource("1_bf6p6")
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 z_index = 4
 sprite_frames = SubResource("SpriteFrames_36jb8")
-animation = &"Walk Forward"
-frame = 3
-frame_progress = 0.543944
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -76,6 +78,8 @@ shape = SubResource("RectangleShape2D_iow7j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 

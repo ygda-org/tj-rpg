@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgfwqdlq64q2"]
 
-[ext_resource type="Texture2D" uid="uid://qres8tqhcfro" path="res://ASSETS/GENERAL ASSETS/white tile.png" id="1_4hxsy"]
+[ext_resource type="Texture2D" uid="uid://qres8tqhcfro" path="res://ASSETS/BACKGROUND ASSETS/white tile.png" id="1_4hxsy"]
 [ext_resource type="Script" path="res://UI/player_ui.gd" id="1_b3fah"]
-[ext_resource type="Texture2D" uid="uid://byugt1dqp8ak7" path="res://ASSETS/GENERAL ASSETS/red tile.png" id="2_10xwq"]
+[ext_resource type="Texture2D" uid="uid://byugt1dqp8ak7" path="res://ASSETS/BACKGROUND ASSETS/red tile.png" id="2_10xwq"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
