@@ -15,13 +15,10 @@ func _ready():
 func goto_scene(path):
 	_deferred_goto_scene.call_deferred(path)
 	
-func _deferred_goto_scene(path):
+func _deferred_goto_scene(scene: Node):
 	# Free the current scene, calling queue free doesn't matter here
 	current_scene.free()
-	
-	# Instantiate the new scene
-	var scene_loader = ResourceLoader.load(path)
-	current_scene = scene_loader.instantiate()
+	current_scene = scene
 	
 	# Put the new scene in the scene tree
 	get_tree().root.add_child(current_scene)

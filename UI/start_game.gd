@@ -5,4 +5,4 @@ extends Node
 var first_scene: String = "res://MAIN (global control)/main.tscn"
 
 func _on_pressed() -> void:
-	SceneSwitcher.goto_scene(first_scene)
+	SceneSwitcher.goto_scene(load(first_scene).instantiate())
