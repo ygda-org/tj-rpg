@@ -51,6 +51,7 @@ position = Vector2(88, -42)
 [node name="level_swap_zone" parent="." instance=ExtResource("9_yu6ju")]
 position = Vector2(312, -308)
 to_scene_path = "res://AREA-1/area-art-gallery-hall.tscn"
+player_spawn = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
 position = Vector2(4, 15)
@@ -89,3 +90,9 @@ texture = ExtResource("13_pidt3")
 position = Vector2(-8370, -12800)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_pd6hs")
+
+[node name="SpawnLocations" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="0" type="Node2D" parent="SpawnLocations"]
+position = Vector2(286, -298)
