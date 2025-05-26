@@ -83,6 +83,7 @@ label_settings = SubResource("LabelSettings_7ijcl")
 [node name="level_swap_zone" parent="." instance=ExtResource("5_6reqa")]
 position = Vector2(0, -2)
 to_scene_path = "res://UI/start_menu.tscn"
+player_spawn = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
 position = Vector2(-178, 6)
