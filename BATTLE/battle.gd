@@ -29,13 +29,13 @@ func _ready():
 	if(player != null):
 		player.freeze(true)
 	# Set the Player and Enemy Health bar
-	set_health($PlayerPanel/PlayerHealthBar, Gamestate.current_health, Gamestate.max_health)
+	set_health($PlayerPanel/PlayerHealthBar, PlayerState.current_health, PlayerState.max_health)
 	set_health($Enemy/EnemyHealthBar, enemy.health, enemy.health)
 	# Pull and set Enemy Texture
 	# WARNING The Spire ratios are way wack. Someone should fix it.
 	$Enemy.texture = enemy.texture
 	# Pull and set Player and Enemy health
-	current_player_health = Gamestate.current_health
+	current_player_health = PlayerState.current_health
 	current_enemy_health = enemy.health
 	# Preemptivly Hide everything
 	$Textbox.hide()
@@ -66,9 +66,9 @@ end_sequence
 var state := 'start_sequence'
 
 func load_moves():
-	for i in range(0, len(Gamestate.player_moves)):
+	for i in range(0, len(PlayerState.active_moves)):
 		var moveButton = find_child("Move" + str(i))
-		var move : BasePlayerMove = Gamestate.player_moves[i]
+		var move : BasePlayerMove = PlayerState.active_moves[i]
 		moveButton.text = move.display_name.to_upper()
 
 func set_health(progress_bar, health, max_health):
@@ -112,8 +112,8 @@ func display_text(text):
 	$Textbox/Label.text = text
 
 func update_player_health():
-	current_player_health = Gamestate.current_health
-	set_health($PlayerPanel/PlayerHealthBar, current_player_health, Gamestate.max_health)
+	current_player_health = PlayerState.current_health
+	set_health($PlayerPanel/PlayerHealthBar, current_player_health, PlayerState.max_health)
 
 func update_enemy_health():
 	set_health($Enemy/EnemyHealthBar, current_enemy_health, enemy.health)
@@ -127,7 +127,7 @@ func _on_attack_pressed():
 	$ActionsPanel/AttackOptions.show()
 	await move_chosen
 	
-	var chosen_move : BasePlayerMove = Gamestate.player_moves[loaded_move_index]
+	var chosen_move : BasePlayerMove = PlayerState.active_moves[loaded_move_index]
 	
 	display_text("You used " + chosen_move.display_name)
 	await textbox_closed
@@ -162,8 +162,8 @@ func _on_heal_pressed():
 	display_text("you ate dan tat!! mmmmm")
 	await textbox_closed
 	
-	current_player_health = min(Gamestate.max_health, current_player_health + 20)
-	set_health($PlayerPanel/PlayerHealthBar, current_player_health, Gamestate.max_health)
+	current_player_health = min(PlayerState.max_health, current_player_health + 20)
+	set_health($PlayerPanel/PlayerHealthBar, current_player_health, PlayerState.max_health)
 	
 	display_text("yippee you healed 20 health!")
 	await textbox_closed

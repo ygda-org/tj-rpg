@@ -20,6 +20,7 @@ config/icon="res://test-image.svg"
 Gamestate="*res://MAIN (global control)/gamestate.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneSwitcher="*res://MAIN (global control)/scene_switcher.gd"
+PlayerState="*res://MAIN (global control)/player_state.gd"
 
 [display]
 
