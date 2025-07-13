@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_bfghs")
 
 [node name="toAud" parent="." instance=ExtResource("2_sx6ca")]
 to_scene_path = "res://AREA-1/area-audlob.tscn"
+player_spawn = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toAud"]
 position = Vector2(211, 39)
@@ -32,3 +33,9 @@ shape = SubResource("RectangleShape2D_t2ph7")
 
 [node name="Player" parent="." instance=ExtResource("3_j1dyw")]
 position = Vector2(28, 31)
+
+[node name="SpawnLocations" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="0" type="Node2D" parent="SpawnLocations"]
+position = Vector2(198, 40)

@@ -48,12 +48,12 @@ rendering_quadrant_size = 8
 [node name="Player" parent="." instance=ExtResource("8_xwccy")]
 position = Vector2(88, -42)
 
-[node name="level_swap_zone" parent="." instance=ExtResource("9_yu6ju")]
+[node name="toArt" parent="." instance=ExtResource("9_yu6ju")]
 position = Vector2(312, -308)
 to_scene_path = "res://AREA-1/area-art-gallery-hall.tscn"
 player_spawn = -1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level_swap_zone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toArt"]
 position = Vector2(4, 15)
 shape = SubResource("RectangleShape2D_di2ra")
 
