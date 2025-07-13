@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://bm217wdt8jkn1"]
+[gd_scene load_steps=8 format=4 uid="uid://bm217wdt8jkn1"]
 
 [ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/BACKGROUND ASSETS/current_tile_set.tres" id="1_5kj0t"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="2_y2kju"]
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="3_wh47g"]
+[ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/BACKGROUND ASSETS/decoration.tres" id="4_y2kju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifhy8"]
 size = Vector2(9, 69)
@@ -49,3 +50,7 @@ unique_name_in_owner = true
 
 [node name="0" type="Node2D" parent="SpawnLocations"]
 position = Vector2(408, 167)
+
+[node name="Decor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAoABgAAgAAAAAAAAAqABgAAgAAAAAAAAA=")
+tile_set = ExtResource("4_y2kju")
