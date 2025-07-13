@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="4_htfe0"]
 [ext_resource type="PackedScene" uid="uid://b11poyu5km1x8" path="res://INTERACTION/dialogue.tscn" id="5_baw2k"]
-[ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/BACKGROUND ASSETS/current_tile_set.tres" id="5_nuxug"]
+[ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/current_tile_set.tres" id="5_nuxug"]
 [ext_resource type="Resource" uid="uid://delbyr1ipq2dn" path="res://DIALOGUE/TEST/Frances.dialogue" id="6_a3yaw"]
 [ext_resource type="Texture2D" uid="uid://cshdcvdeoq6ne" path="res://ASSETS/NPC ASSETS/Frances.png" id="7_2u2hm"]
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="8_xwccy"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="9_yu6ju"]
 [ext_resource type="Texture2D" uid="uid://xx5jjmcr5mmp" path="res://ASSETS/BACKGROUND ASSETS/blue sofa block 1.png" id="10_f5yiy"]
 [ext_resource type="Texture2D" uid="uid://cyfbn2b6cpukj" path="res://ASSETS/BACKGROUND ASSETS/blue sofa block 2.png" id="11_l6cgq"]
-[ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/BACKGROUND ASSETS/decoration.tres" id="12_xn1oj"]
+[ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/decoration.tres" id="12_xn1oj"]
 [ext_resource type="Resource" uid="uid://c4ej3wsjfeu0r" path="res://DIALOGUE/TEST/rose.dialogue" id="12_ywixe"]
 [ext_resource type="Texture2D" uid="uid://h5kedf5j5mj7" path="res://ASSETS/BACKGROUND ASSETS/old man (totally not mr rose).png" id="13_pidt3"]
 

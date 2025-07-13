@@ -1,0 +1,47 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://b86ngwn723s7n"]
+
+[ext_resource type="Texture2D" uid="uid://bwtkxntv5k4o4" path="res://ASSETS/BACKGROUND ASSETS/chair pair hair where there care bear fair fare faire nair their they're claire .png" id="1_ygx4j"]
+[ext_resource type="Texture2D" uid="uid://5kej30nima4n" path="res://ASSETS/BACKGROUND ASSETS/desk esk best tesk.png" id="2_1iv0w"]
+[ext_resource type="Texture2D" uid="uid://ck3yrmxuxk7vk" path="res://ASSETS/BACKGROUND ASSETS/trash_empty.png" id="3_3ibvp"]
+[ext_resource type="Texture2D" uid="uid://cem6e6hx4bwq8" path="res://ASSETS/BACKGROUND ASSETS/trash_full.png" id="4_vm447"]
+[ext_resource type="Texture2D" uid="uid://cbnl6oxh1h5w8" path="res://ASSETS/BACKGROUND ASSETS/upstairschair_left.png" id="5_o1bu8"]
+[ext_resource type="Texture2D" uid="uid://der6gt7vvqn4y" path="res://ASSETS/BACKGROUND ASSETS/upstairschair_down.png" id="6_m3vbt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tr2qt"]
+texture = ExtResource("1_ygx4j")
+texture_region_size = Vector2i(16, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2ve7"]
+texture = ExtResource("2_1iv0w")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ejim"]
+texture = ExtResource("3_3ibvp")
+texture_region_size = Vector2i(15, 25)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pcw8q"]
+texture = ExtResource("4_vm447")
+texture_region_size = Vector2i(15, 25)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqxdv"]
+texture = ExtResource("5_o1bu8")
+texture_region_size = Vector2i(20, 30)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vt1g4"]
+texture = ExtResource("6_m3vbt")
+texture_region_size = Vector2i(20, 30)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_tr2qt")
+sources/1 = SubResource("TileSetAtlasSource_q2ve7")
+sources/2 = SubResource("TileSetAtlasSource_3ejim")
+sources/3 = SubResource("TileSetAtlasSource_pcw8q")
+sources/7 = SubResource("TileSetAtlasSource_nqxdv")
+sources/8 = SubResource("TileSetAtlasSource_vt1g4")

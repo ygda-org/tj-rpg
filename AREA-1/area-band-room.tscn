@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://bvm7t6yr7u1u5"]
 
-[ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/BACKGROUND ASSETS/current_tile_set.tres" id="1_twfok"]
+[ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/current_tile_set.tres" id="1_twfok"]
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_ped74"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="3_bnft6"]
-[ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/BACKGROUND ASSETS/decoration.tres" id="4_ped74"]
+[ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/decoration.tres" id="4_ped74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xmoc"]
 size = Vector2(17.5, 94)
