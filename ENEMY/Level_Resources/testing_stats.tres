@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="BaseEnemyResource" load_steps=8 format=3 uid="uid://byicgb15a2tng"]
 
-[ext_resource type="Script" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="1_cfltj"]
+[ext_resource type="Script" uid="uid://cmfj72tncj0vs" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="1_cfltj"]
 [ext_resource type="PackedScene" uid="uid://dder14amjoysy" path="res://ENEMY/Obstacles/circle.tscn" id="2_5hmn5"]
-[ext_resource type="Script" path="res://ENEMY/Level_Resources/base_enemy_resource.gd" id="3_choi4"]
+[ext_resource type="Script" uid="uid://buv3lwl30661m" path="res://ENEMY/Level_Resources/base_enemy_resource.gd" id="3_choi4"]
 [ext_resource type="Texture2D" uid="uid://b1b0txl562h3" path="res://ASSETS/BACKGROUND ASSETS/radish_olivegarden.png" id="4_e32k0"]
 
 [sub_resource type="Resource" id="Resource_5716a"]

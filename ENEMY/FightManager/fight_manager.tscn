@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dv0i2moqnwlsf"]
 
-[ext_resource type="Script" path="res://ENEMY/FightManager/fight_manager.gd" id="1_ngvdj"]
-[ext_resource type="Script" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="2_6yhmy"]
+[ext_resource type="Script" uid="uid://dvp4exn77s4tp" path="res://ENEMY/FightManager/fight_manager.gd" id="1_ngvdj"]
+[ext_resource type="Script" uid="uid://cmfj72tncj0vs" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="2_6yhmy"]
 [ext_resource type="PackedScene" uid="uid://dder14amjoysy" path="res://ENEMY/Obstacles/circle.tscn" id="3_v57o0"]
 [ext_resource type="Texture2D" uid="uid://bcovp687jpi4n" path="res://ASSETS/BATTLE ASSETS/TEMPORARY player icon.png" id="4_lgmfb"]
 

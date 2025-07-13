@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://c21jo4gbajed0"]
 
-[ext_resource type="Script" path="res://UI/start_game.gd" id="1_p47w1"]
+[ext_resource type="Script" uid="uid://xy3x05kfjt6s" path="res://UI/start_game.gd" id="1_p47w1"]
 
 [node name="StartMenu" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 854.0
-offset_top = 527.0
-offset_right = 998.0
-offset_bottom = 558.0
+offset_left = 357.0
+offset_top = 283.0
+offset_right = 501.0
+offset_bottom = 314.0
 scale = Vector2(1.52, 1.52)
 text = "Press me to start!"
 script = ExtResource("1_p47w1")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c808bonwvjpqo"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_bf6p6"]
+[ext_resource type="Script" uid="uid://mbne00pdype1" path="res://player.gd" id="1_bf6p6"]
 [ext_resource type="Texture2D" uid="uid://csd2mlyw3htoo" path="res://ASSETS/Forward walk cycle spritesheet.png" id="2_jn5ls"]
 [ext_resource type="PackedScene" uid="uid://gh5m7f5jcfih" path="res://INTERACTION/player_interact.tscn" id="3_07rft"]
 [ext_resource type="Texture2D" uid="uid://dnxpka5knhrwf" path="res://ASSETS/small teremiah jeremiah.png" id="3_52kdg"]

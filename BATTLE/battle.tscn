@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://maokcyd0gft3" path="res://test-image.svg" id="1_baobv"]
 [ext_resource type="Texture2D" uid="uid://b6iy3oi2bo457" path="res://ASSETS/BATTLE ASSETS/TestBG.jpg" id="1_onmo0"]
-[ext_resource type="Script" path="res://BATTLE/battle.gd" id="1_p7l2w"]
+[ext_resource type="Script" uid="uid://v3ppicen8fha" path="res://BATTLE/battle.gd" id="1_p7l2w"]
 [ext_resource type="Resource" uid="uid://byicgb15a2tng" path="res://ENEMY/Level_Resources/testing_stats.tres" id="2_vinw0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ojeh"]
@@ -98,9 +98,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yccys"]
 _data = {
-"RESET": SubResource("Animation_w0lkc"),
-"slide_action_panel": SubResource("Animation_d4ukc"),
-"slide_enemy_icon": SubResource("Animation_a5g4i")
+&"RESET": SubResource("Animation_w0lkc"),
+&"slide_action_panel": SubResource("Animation_d4ukc"),
+&"slide_enemy_icon": SubResource("Animation_a5g4i")
 }
 
 [node name="Battle" type="Node2D"]
@@ -316,7 +316,7 @@ text = ">"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_yccys")
+&"": SubResource("AnimationLibrary_yccys")
 }
 
 [connection signal="pressed" from="ActionsPanel/PlayerOptions/Run" to="." method="_on_run_pressed"]
