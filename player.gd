@@ -26,6 +26,9 @@ func _physics_process(delta):
 	
 	if(Input.is_action_pressed("slow_walk")):
 		velocity *= SLOW_WALK
+	if Input.is_action_pressed("debug_run"): # FOR DEBUG PURPOSES, PRESS CTRL TO RUN FASTER
+		velocity *= 4
+	
 	
 	if velocity == Vector2(0,0):
 		$Anim.play("idle")
