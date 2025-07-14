@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BaseEnemyResource" load_steps=6 format=3 uid="uid://dg8ovn803kkgp"]
+[gd_resource type="Resource" script_class="BaseEnemyResource" load_steps=8 format=3 uid="uid://dg8ovn803kkgp"]
 
 [ext_resource type="Script" uid="uid://cmfj72tncj0vs" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="1_snigg"]
 [ext_resource type="Script" uid="uid://buv3lwl30661m" path="res://ENEMY/Level_Resources/base_enemy_resource.gd" id="2_bpwp6"]
@@ -12,11 +12,25 @@ location = Vector2(0, 0)
 summon_time = 0
 metadata/_custom_type_script = "uid://cmfj72tncj0vs"
 
+[sub_resource type="Resource" id="Resource_orpod"]
+script = ExtResource("1_snigg")
+obstacle = ExtResource("2_orpod")
+location = Vector2(0, 0)
+summon_time = 1
+metadata/_custom_type_script = "uid://cmfj72tncj0vs"
+
+[sub_resource type="Resource" id="Resource_e6foq"]
+script = ExtResource("1_snigg")
+obstacle = ExtResource("2_orpod")
+location = Vector2(0, 0)
+summon_time = 2
+metadata/_custom_type_script = "uid://cmfj72tncj0vs"
+
 [resource]
 script = ExtResource("2_bpwp6")
 texture = ExtResource("4_e6foq")
 health = 100.0
 speed = 10
 name = "BANDDEDEMEYMTKRLTg"
-obstacle_loadout = Array[ExtResource("1_snigg")]([SubResource("Resource_rkebq")])
+obstacle_loadout = Array[ExtResource("1_snigg")]([SubResource("Resource_rkebq"), SubResource("Resource_orpod"), SubResource("Resource_e6foq")])
 metadata/_custom_type_script = "uid://buv3lwl30661m"

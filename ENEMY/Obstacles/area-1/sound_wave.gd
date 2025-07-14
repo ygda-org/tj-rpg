@@ -10,7 +10,7 @@ signal exit_seq_finished
 
 var tween
 
-var projectile_speed = 1
+var projectile_speed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,7 +31,9 @@ func start_sequence():
 func active_sequence():
 	$AnimationPlayer.queue("active")
 	tween = get_tree().create_tween()
-	tween.tween_property(self, "position", player.position, projectile_speed)
+	#var target = player.position * 10
+	var target = position.direction_to(player.position) * player.get_parent().get_node("Panel").size
+	tween.tween_property(self, "position", target, target.distance_to(starting_pos)/projectile_speed)
 	print("ACTIVE")
 	await $AnimationPlayer.caches_cleared
 	emit_signal("active_seq_finished")
