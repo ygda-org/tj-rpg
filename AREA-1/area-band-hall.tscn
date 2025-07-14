@@ -38,4 +38,4 @@ shape = SubResource("RectangleShape2D_kwq47")
 unique_name_in_owner = true
 
 [node name="0" type="Node2D" parent="SpawnLocations"]
-position = Vector2(47, 185)
+position = Vector2(48, 173)
