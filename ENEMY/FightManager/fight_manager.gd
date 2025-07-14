@@ -14,7 +14,7 @@ signal fight_finished
 
 func _ready() -> void:
 	update_player_stats()
-	position = Vector2(1920/2 - 732/2, 1080/2 - 482/2)
+	position = Vector2(get_viewport().size.x/2 - 732/2, get_viewport().size.y/2 - 482/2)
 
 
 func _process(delta: float) -> void:

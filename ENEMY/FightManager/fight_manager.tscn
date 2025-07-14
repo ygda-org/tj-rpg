@@ -1,33 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv0i2moqnwlsf"]
+[gd_scene load_steps=8 format=3 uid="uid://dv0i2moqnwlsf"]
 
 [ext_resource type="Script" uid="uid://dvp4exn77s4tp" path="res://ENEMY/FightManager/fight_manager.gd" id="1_ngvdj"]
 [ext_resource type="Script" uid="uid://cmfj72tncj0vs" path="res://ENEMY/Obstacles/GenericObstacleController/obstacle_package.gd" id="2_6yhmy"]
-[ext_resource type="PackedScene" uid="uid://dder14amjoysy" path="res://ENEMY/Obstacles/circle.tscn" id="3_v57o0"]
+[ext_resource type="PackedScene" uid="uid://8ps7r2mesne5" path="res://ENEMY/Obstacles/area-1/sound_wave.tscn" id="3_qiyib"]
 [ext_resource type="Texture2D" uid="uid://bcovp687jpi4n" path="res://ASSETS/BATTLE ASSETS/TEMPORARY player icon.png" id="4_lgmfb"]
 
-[sub_resource type="Resource" id="Resource_kpqcu"]
+[sub_resource type="Resource" id="Resource_2vx72"]
 script = ExtResource("2_6yhmy")
-obstacle = ExtResource("3_v57o0")
-location = Vector2(366, 241)
-summon_time = 2
-
-[sub_resource type="Resource" id="Resource_0y8lg"]
-script = ExtResource("2_6yhmy")
-obstacle = ExtResource("3_v57o0")
-location = Vector2(100, 330)
-summon_time = 3
-
-[sub_resource type="Resource" id="Resource_lme2c"]
-script = ExtResource("2_6yhmy")
-obstacle = ExtResource("3_v57o0")
-location = Vector2(600, 241)
-summon_time = 4
-
-[sub_resource type="Resource" id="Resource_efu61"]
-script = ExtResource("2_6yhmy")
-obstacle = ExtResource("3_v57o0")
-location = Vector2(150, 260)
-summon_time = 5
+obstacle = ExtResource("3_qiyib")
+location = Vector2(0, 0)
+summon_time = 0
+metadata/_custom_type_script = "uid://cmfj72tncj0vs"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heycp"]
 border_width_left = 16
@@ -44,7 +27,7 @@ radius = 16.0
 
 [node name="FightManager" type="Node2D"]
 script = ExtResource("1_ngvdj")
-obst_package_list = Array[ExtResource("2_6yhmy")]([SubResource("Resource_kpqcu"), SubResource("Resource_0y8lg"), SubResource("Resource_lme2c"), SubResource("Resource_efu61")])
+obst_package_list = Array[ExtResource("2_6yhmy")]([SubResource("Resource_2vx72")])
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 732.0

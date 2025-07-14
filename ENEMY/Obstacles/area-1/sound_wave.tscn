@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://8ps7r2mesne5"]
+
+[ext_resource type="Script" uid="uid://04yjv2mob84k" path="res://ENEMY/Obstacles/area-1/sound_wave.gd" id="1_neu22"]
+[ext_resource type="PackedScene" uid="uid://c4v4xeb32kxkf" path="res://ENEMY/Obstacles/GenericObstacleController/generic_obstacle_controller.tscn" id="2_xav6x"]
+[ext_resource type="Texture2D" uid="uid://p1y07a3w523m" path="res://ASSETS/OBSTACLE ASSETS/pink_circle.png" id="3_xl81m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xrvs"]
+radius = 45.0
+
+[sub_resource type="Animation" id="Animation_skk60"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gg4ly"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_neu22"]
+resource_name = "active"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xav6x"]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4d8a6"]
+_data = {
+&"RESET": SubResource("Animation_gg4ly"),
+&"active": SubResource("Animation_neu22"),
+&"exit": SubResource("Animation_xav6x"),
+&"start": SubResource("Animation_skk60")
+}
+
+[node name="SoundWave" type="Node2D"]
+script = ExtResource("1_neu22")
+
+[node name="GenericObstacleController" parent="." instance=ExtResource("2_xav6x")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_xl81m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8xrvs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4d8a6")
+}
