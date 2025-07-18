@@ -72,8 +72,8 @@ func load_moves():
 		moveButton.text = move.display_name.to_upper()
 
 func set_health(progress_bar, health, max_health):
-	progress_bar.value = health
 	progress_bar.max_value = max_health
+	progress_bar.value = health
 
 func enemy_turn():
 	#Move Enemy icon Off

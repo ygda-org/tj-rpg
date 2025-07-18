@@ -85,3 +85,11 @@ position_smoothing_speed = 15.0
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 
 [node name="PlayerUI" parent="PlayerUI" instance=ExtResource("4_rr4f4")]
+
+[node name="BG" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -134.0
+offset_top = -78.0
+offset_right = 132.0
+offset_bottom = 86.0
+color = Color(0.0480506, 0.084291, 0.0892102, 1)

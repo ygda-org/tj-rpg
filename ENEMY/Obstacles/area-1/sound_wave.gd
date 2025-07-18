@@ -31,7 +31,6 @@ func start_sequence():
 func active_sequence():
 	$AnimationPlayer.queue("active")
 	tween = get_tree().create_tween()
-	#var target = player.position * 10
 	var target = position.direction_to(player.position) * player.get_parent().get_node("Panel").size
 	tween.tween_property(self, "position", target, target.distance_to(starting_pos)/projectile_speed)
 	print("ACTIVE")
