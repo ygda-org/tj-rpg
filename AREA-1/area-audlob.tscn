@@ -9,7 +9,7 @@
 size = Vector2(9, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcj17"]
-size = Vector2(68, 15)
+size = Vector2(40, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kj0t"]
 size = Vector2(20, 58)
@@ -41,7 +41,7 @@ to_scene_path = "res://AREA-1/area-band-hall.tscn"
 player_spawn = -1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toBandHall"]
-position = Vector2(407, 200.5)
+position = Vector2(412, 200.5)
 shape = SubResource("RectangleShape2D_dcj17")
 
 [node name="toField" parent="." instance=ExtResource("2_y2kju")]
