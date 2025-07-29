@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BaseItemResource" load_steps=2 format=3 uid="uid://c3pa3owufcpiy"]
+
+[ext_resource type="Script" uid="uid://c5jemm30enapr" path="res://ITEM/BaseItemResource.gd" id="1_43bp8"]
+
+[resource]
+script = ExtResource("1_43bp8")
+name = "Field Door Key"
+metadata/_custom_type_script = "uid://c5jemm30enapr"

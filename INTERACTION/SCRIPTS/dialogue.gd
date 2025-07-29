@@ -9,7 +9,7 @@ extends Node2D
 func _ready() -> void:
 	var parent_interactable = get_parent()
 	assert(parent_interactable.is_in_group("interactable")) # This should be a child of an interactable
-	parent_interactable.interacted.connect(_show_dialogue)	
+	parent_interactable.interacted.connect(_show_dialogue)
 
 
 func _show_dialogue() -> void:

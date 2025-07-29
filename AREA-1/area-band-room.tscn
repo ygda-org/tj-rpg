@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=4 uid="uid://bvm7t6yr7u1u5"]
+[gd_scene load_steps=10 format=4 uid="uid://bvm7t6yr7u1u5"]
 
 [ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/current_tile_set.tres" id="1_twfok"]
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="2_ped74"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="3_bnft6"]
 [ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/decoration.tres" id="4_ped74"]
+[ext_resource type="PackedScene" uid="uid://o7l7ph1i6lli" path="res://ITEM/Base_Item.tscn" id="5_bnft6"]
+[ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="6_2xmoc"]
+[ext_resource type="Resource" uid="uid://c3pa3owufcpiy" path="res://ITEM/ITEM_RESOURCES/field_door_key.tres" id="6_yh4gu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xmoc"]
 size = Vector2(10.75, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh4gu"]
 
 [node name="Area-band-room" type="Node2D"]
 
@@ -28,3 +33,12 @@ shape = SubResource("RectangleShape2D_2xmoc")
 z_index = 1
 tile_map_data = PackedByteArray("AAAIAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAIAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAAUAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAGAAoAAgAAAAAAAAA=")
 tile_set = ExtResource("4_ped74")
+
+[node name="BaseItem" parent="." instance=ExtResource("5_bnft6")]
+position = Vector2(237, 52)
+item_resource = ExtResource("6_yh4gu")
+
+[node name="Interactable" parent="BaseItem" instance=ExtResource("6_2xmoc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseItem/Interactable"]
+shape = SubResource("RectangleShape2D_yh4gu")

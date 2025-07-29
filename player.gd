@@ -28,7 +28,9 @@ func _physics_process(delta):
 		velocity *= SLOW_WALK
 	if Input.is_action_pressed("debug_run"): # FOR DEBUG PURPOSES, PRESS CTRL TO RUN FASTER
 		velocity *= 4
-	
+	if Input.is_action_just_pressed("open_inventory"):
+		freeze(true)
+		toggle_inventory()
 	
 	if velocity == Vector2(0,0):
 		$Anim.play("idle")
@@ -39,9 +41,13 @@ func _physics_process(delta):
 func freeze(input : bool):
 	if(input):
 		$player_interact.can_interact = false
-		$Sprite.visible = false
+		$Anim.visible = false
 		can_move = false
 	else:
 		$player_interact.can_interact = true
-		$Sprite.visible = true
+		$Anim.visible = true
 		can_move = true
+
+func toggle_inventory():
+	print(PlayerState.item_inventory)
+	freeze(false)

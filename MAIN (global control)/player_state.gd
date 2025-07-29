@@ -15,6 +15,7 @@ var max_health: int = 100
 var damage: int = 20
 var active_moves : Array = [BASIC_HIT, LARGE_HIT]
 var inventory : Array = [BASIC_HIT, LARGE_HIT]
+var item_inventory : Array = []
 #######
 
 func save_game() -> void:
@@ -25,6 +26,7 @@ func save_game() -> void:
 	save_file.set_value("Player", "damage", damage)
 	save_file.set_value("Player", "active_moves", active_moves)
 	save_file.set_value("Player", "inventory", inventory)
+	save_file.set_value("Player", "item_inventory", inventory)
 	
 	var error = save_file.save(save_path)
 	if error:
@@ -48,4 +50,5 @@ func load_save() -> void:
 	damage = save_file.get_value("Player", "damage", 20)
 	active_moves = save_file.get_value("Player", "active_moves", [])
 	inventory = save_file.get_value("Player", "inventory", [])
+	item_inventory = save_file.get_value("Player", "item_inventory", [])
 	
