@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bm217wdt8jkn1"]
+[gd_scene load_steps=14 format=4 uid="uid://bm217wdt8jkn1"]
 
 [ext_resource type="TileSet" uid="uid://c6oujcmh5du4b" path="res://ASSETS/current_tile_set.tres" id="1_5kj0t"]
 [ext_resource type="PackedScene" uid="uid://c1ovgj52owwoi" path="res://MAIN (global control)/level_swap_zone.tscn" id="2_y2kju"]
 [ext_resource type="PackedScene" uid="uid://c808bonwvjpqo" path="res://player.tscn" id="3_wh47g"]
 [ext_resource type="TileSet" uid="uid://b86ngwn723s7n" path="res://ASSETS/decoration.tres" id="4_y2kju"]
+[ext_resource type="PackedScene" uid="uid://bc5h5kht6dl" path="res://INTERACTION/interactable.tscn" id="5_ifhy8"]
+[ext_resource type="PackedScene" uid="uid://b2k1g84otia18" path="res://ITEM/Item_Gate.tscn" id="6_dcj17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifhy8"]
 size = Vector2(9, 69)
@@ -19,6 +21,12 @@ size = Vector2(37, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh47g"]
 size = Vector2(31, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r33an"]
+size = Vector2(24, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0huxv"]
+size = Vector2(18, 48)
 
 [node name="Audlob" type="Node2D"]
 
@@ -82,3 +90,15 @@ player_spawn = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toGirls"]
 position = Vector2(64.5, 248)
 shape = SubResource("RectangleShape2D_wh47g")
+
+[node name="Interactable" parent="." instance=ExtResource("5_ifhy8")]
+
+[node name="ItemGate" parent="Interactable" instance=ExtResource("6_dcj17")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable/ItemGate"]
+position = Vector2(495, 24.5)
+shape = SubResource("RectangleShape2D_r33an")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(478, 24)
+shape = SubResource("RectangleShape2D_0huxv")

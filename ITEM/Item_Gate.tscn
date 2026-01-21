@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2k1g84otia18"]
+
+[ext_resource type="Script" uid="uid://cblia4nrnlewo" path="res://ITEM/item_gate.gd" id="1_16ycx"]
+
+[node name="ItemGate" type="StaticBody2D"]
+script = ExtResource("1_16ycx")

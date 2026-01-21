@@ -1,5 +1,7 @@
 extends Node2D
 
+# to use BaseItem, just fill in the stuff and add an interactable node for pickup
+
 @export var field_sprite: Texture2D
 
 @export var item_resource: BaseItemResource = null

@@ -14,14 +14,14 @@ bg_color = Color(0, 0.91, 0.439833, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgdvl"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpa36"]
-bg_color = Color(0.258, 0.86, 0.7998, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa5nm"]
+bg_color = Color(0, 0.68, 0.612, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b44uv"]
 bg_color = Color(0.258824, 0.858824, 0.8, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa5nm"]
-bg_color = Color(0, 0.68, 0.612, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpa36"]
+bg_color = Color(0.258, 0.86, 0.7998, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnucm"]
 bg_color = Color(0.823529, 0.823529, 0.823529, 1)
@@ -168,9 +168,9 @@ offset_bottom = 122.5
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 text = "RUN"
 
 [node name="Heal" type="Button" parent="ActionsPanel/PlayerOptions"]
@@ -187,9 +187,9 @@ offset_bottom = 72.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 text = "HEAL"
 
 [node name="Attack" type="Button" parent="ActionsPanel/PlayerOptions"]
@@ -202,9 +202,9 @@ offset_right = 175.0
 offset_bottom = 22.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qa5nm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b44uv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpa36")
 text = "ACTION"
 
 [node name="AttackOptions" type="Control" parent="ActionsPanel"]
